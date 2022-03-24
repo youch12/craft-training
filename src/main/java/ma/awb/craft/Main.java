@@ -3,9 +3,15 @@ package ma.awb.craft;
 public class Main {
 
   public static void main(String[] args) {
-    Image image = new ImageProxy("awb_banner.jpg");
+    Stock teslaStock = new Stock();
 
-    image.display();
-    image.display();
+    BuyStock buyStockOrder = new BuyStock();
+    SellStock sellStockOrder = new SellStock();
+
+    Broker broker = new Broker();
+    broker.takeOrder(buyStockOrder);
+    broker.takeOrder(sellStockOrder);
+
+    broker.placeOrders();
   }
 }
